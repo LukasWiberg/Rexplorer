@@ -1,6 +1,8 @@
+using Rexplorer.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -11,10 +13,10 @@ namespace Rexplorer {
         /// </summary>
         [STAThread]
         static void Main() {
-            Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            new ReProcess();
+            Application.Run(new MainForm());
         }
     }
 }
