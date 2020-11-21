@@ -31,12 +31,13 @@ namespace Rexplorer.Forms {
             this.inputFolderBrowserButton = new System.Windows.Forms.Button();
             this.outputFolderBrowserButton = new System.Windows.Forms.Button();
             this.outputFolder = new System.Windows.Forms.TextBox();
+            this.convertMediaButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // inputFolder
             // 
             this.inputFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.inputFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.inputFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.inputFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.inputFolder.Font = new System.Drawing.Font("Verdana", 14F);
             this.inputFolder.ForeColor = System.Drawing.Color.White;
@@ -48,7 +49,7 @@ namespace Rexplorer.Forms {
             // 
             // inputFolderBrowserButton
             // 
-            this.inputFolderBrowserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.inputFolderBrowserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.inputFolderBrowserButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.inputFolderBrowserButton.FlatAppearance.BorderSize = 2;
             this.inputFolderBrowserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -65,7 +66,7 @@ namespace Rexplorer.Forms {
             // 
             // outputFolderBrowserButton
             // 
-            this.outputFolderBrowserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.outputFolderBrowserButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.outputFolderBrowserButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(20)))), ((int)(((byte)(30)))));
             this.outputFolderBrowserButton.FlatAppearance.BorderSize = 2;
             this.outputFolderBrowserButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -83,7 +84,7 @@ namespace Rexplorer.Forms {
             // outputFolder
             // 
             this.outputFolder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.outputFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(40)))), ((int)(((byte)(60)))));
+            this.outputFolder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.outputFolder.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.outputFolder.Font = new System.Drawing.Font("Verdana", 14F);
             this.outputFolder.ForeColor = System.Drawing.Color.White;
@@ -93,10 +94,27 @@ namespace Rexplorer.Forms {
             this.outputFolder.Size = new System.Drawing.Size(520, 30);
             this.outputFolder.TabIndex = 2;
             // 
+            // convertMediaButton
+            // 
+            this.convertMediaButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.convertMediaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(40)))), ((int)(((byte)(120)))));
+            this.convertMediaButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.convertMediaButton.Font = new System.Drawing.Font("Verdana", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.convertMediaButton.ForeColor = System.Drawing.Color.White;
+            this.convertMediaButton.Location = new System.Drawing.Point(10, 320);
+            this.convertMediaButton.Margin = new System.Windows.Forms.Padding(0);
+            this.convertMediaButton.Name = "convertMediaButton";
+            this.convertMediaButton.Size = new System.Drawing.Size(560, 30);
+            this.convertMediaButton.TabIndex = 4;
+            this.convertMediaButton.Text = "Convert Media";
+            this.convertMediaButton.UseVisualStyleBackColor = false;
+            this.convertMediaButton.Click += new System.EventHandler(this.convertMediaButton_Click);
+            // 
             // ConvertVideoForm
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.convertMediaButton);
             this.Controls.Add(this.outputFolderBrowserButton);
             this.Controls.Add(this.outputFolder);
             this.Controls.Add(this.inputFolderBrowserButton);
@@ -112,5 +130,6 @@ namespace Rexplorer.Forms {
         private System.Windows.Forms.Button inputFolderBrowserButton;
         private System.Windows.Forms.Button outputFolderBrowserButton;
         private System.Windows.Forms.TextBox outputFolder;
+        private System.Windows.Forms.Button convertMediaButton;
     }
 }

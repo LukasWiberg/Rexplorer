@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using System.Diagnostics;
 using Rexplorer.Classes;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Rexplorer.Forms {
     public partial class ConvertVideoForm : Form {
@@ -26,6 +28,10 @@ namespace Rexplorer.Forms {
             outputFolderDialog.SelectedPath = outputFolderText.Value;
             outputFolderDialog.ShowDialog();
             outputFolderText.Value = outputFolderDialog.SelectedPath;
+        }
+
+        private void convertMediaButton_Click(object sender, EventArgs e) {
+            Task.Run(() => ReMedia.ConvertMediaFolderTask(inputFolderText.Value, outputFolderText.Value));
         }
     }
 }
