@@ -1,54 +1,31 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 using Rexplorer.Classes;
 
 namespace Rexplorer.Forms {
     public partial class ConvertVideoForm : Form {
-        private FolderBrowserDialog dialog;
+        public StringBind outputFolderText = new StringBind("");
+        public StringBind inputFolderText = new StringBind("");
+        private FolderBrowserDialog inputFolderDialog = new FolderBrowserDialog();
+        private FolderBrowserDialog outputFolderDialog = new FolderBrowserDialog();
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-            
+        public ConvertVideoForm() {
+            InitializeComponent();
+            inputFolder.DataBindings.Add("Text", inputFolderText, "Value", true, DataSourceUpdateMode.OnPropertyChanged);
+            outputFolder.DataBindings.Add("Text", outputFolderText, "Value", true, DataSourceUpdateMode.OnPropertyChanged);
         }
 
-        private void startConversion_Click(object sender, EventArgs e) {
-
+        private void inputFolderBrowseButton_Click(object sender, EventArgs e) {
+            inputFolderDialog.SelectedPath = outputFolderText.Value;
+            inputFolderDialog.ShowDialog();
+            inputFolderText.Value = inputFolderDialog.SelectedPath;
         }
 
-        private void inputFolderBrowserButton_Click(object sender, EventArgs e) {
-            dialog.ShowDialog();
-            Debug.WriteLine(dialog.SelectedPath);
-        }
-
-        private void outputFolderBrowserButton1_Click(object sender, EventArgs e) {
-            dialog.ShowDialog();
-            Debug.WriteLine(dialog.SelectedPath);
-        }
-
-        private void InitializeComponent() {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(31, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // ConvertVideoForm
-            // 
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.textBox1);
-            this.Name = "ConvertVideoForm";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+        private void outputFolderBrowseButton_Click(object sender, EventArgs e) {
+            outputFolderDialog.SelectedPath = outputFolderText.Value;
+            outputFolderDialog.ShowDialog();
+            outputFolderText.Value = outputFolderDialog.SelectedPath;
         }
     }
 }
