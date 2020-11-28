@@ -4,13 +4,12 @@ using System.Diagnostics;
 using Rexplorer.Classes;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.WindowsAPICodePack.Dialogs;
 
 namespace Rexplorer.Forms {
     public partial class ConvertVideoForm : Form {
         public StringBind outputFolderText = new StringBind("");
         public StringBind inputFolderText = new StringBind("");
-        private FolderBrowserDialog inputFolderDialog = new FolderBrowserDialog();
-        private FolderBrowserDialog outputFolderDialog = new FolderBrowserDialog();
 
         public ConvertVideoForm() {
             InitializeComponent();
@@ -19,15 +18,27 @@ namespace Rexplorer.Forms {
         }
 
         private void inputFolderBrowseButton_Click(object sender, EventArgs e) {
-            inputFolderDialog.SelectedPath = outputFolderText.Value;
+            CommonOpenFileDialog inputFolderDialog = new CommonOpenFileDialog();
+            inputFolderDialog.IsFolderPicker = true;
+            inputFolderDialog.InitialDirectory = outputFolderText.Value;
+
             inputFolderDialog.ShowDialog();
-            inputFolderText.Value = inputFolderDialog.SelectedPath;
+
+            inputFolderText.Value = inputFolderDialog.FileName;
+            Focus();
+            inputFolderDialog.Dispose();
         }
 
         private void outputFolderBrowseButton_Click(object sender, EventArgs e) {
-            outputFolderDialog.SelectedPath = outputFolderText.Value;
+            CommonOpenFileDialog outputFolderDialog = new CommonOpenFileDialog();
+            outputFolderDialog.IsFolderPicker = true;
+            outputFolderDialog.InitialDirectory = outputFolderText.Value;
+
             outputFolderDialog.ShowDialog();
-            outputFolderText.Value = outputFolderDialog.SelectedPath;
+
+            outputFolderText.Value = outputFolderDialog.FileName;
+            Focus();
+            outputFolderDialog.Dispose();
         }
 
         private void convertMediaButton_Click(object sender, EventArgs e) {
