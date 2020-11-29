@@ -19,12 +19,7 @@ namespace Rexplorer.Classes {
 
         public string[] Scrape(string uri, string configPath) {
             if(File.Exists(configPath)) {
-                Debug.WriteLine("text: " + File.ReadAllText(configPath));
                 ReScrapeConfig config = JsonConvert.DeserializeObject<ReScrapeConfig>(File.ReadAllText(configPath));
-                Debug.WriteLine("page: " + config.page);
-                Debug.WriteLine("nextButtonQuery: " + config.nextButtonQuery);
-                Debug.WriteLine("useBaseUri: " + config.useBaseUri);
-                Debug.WriteLine("videoQuery: " + config.videoQuery);
                 return ScrapeSite(uri, config);
             } else {
                 throw new Exception("File on path \"" + configPath + "\" does not exist");
@@ -55,9 +50,7 @@ namespace Rexplorer.Classes {
 
         public List<string> GetVideoLinks(HtmlNode doc, string baseUrl, ReScrapeConfig config) {
             List<string> ret = new List<string>();
-            var videoLinks = new List<HtmlNode>();
-            videoLinks = doc.QuerySelectorAll(config.videoQuery).ToList();
-            Debug.WriteLine("Video count: " + videoLinks.Count());
+            List<HtmlNode> videoLinks = doc.QuerySelectorAll(config.videoQuery).ToList();
             for(int i = 0; i<videoLinks.Count(); i++) {
                 ret.Add(baseUrl + videoLinks[i].Descendants("a").First().Attributes["href"].Value);
             }

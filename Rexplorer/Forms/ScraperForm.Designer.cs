@@ -30,6 +30,7 @@ namespace Rexplorer.Forms {
             this.configInputText = new System.Windows.Forms.TextBox();
             this.configText = new System.Windows.Forms.Label();
             this.urlText = new System.Windows.Forms.Label();
+            this.exportToClipboardButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // uriText
@@ -42,7 +43,7 @@ namespace Rexplorer.Forms {
             this.uriText.Location = new System.Drawing.Point(130, 50);
             this.uriText.Margin = new System.Windows.Forms.Padding(0);
             this.uriText.Name = "uriText";
-            this.uriText.Size = new System.Drawing.Size(395, 30);
+            this.uriText.Size = new System.Drawing.Size(396, 30);
             this.uriText.TabIndex = 3;
             // 
             // scrape
@@ -54,10 +55,10 @@ namespace Rexplorer.Forms {
             this.scrape.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.scrape.Font = new System.Drawing.Font("Verdana", 28F);
             this.scrape.ForeColor = System.Drawing.Color.White;
-            this.scrape.Location = new System.Drawing.Point(9, 261);
+            this.scrape.Location = new System.Drawing.Point(10, 260);
             this.scrape.Margin = new System.Windows.Forms.Padding(0);
             this.scrape.Name = "scrape";
-            this.scrape.Size = new System.Drawing.Size(516, 60);
+            this.scrape.Size = new System.Drawing.Size(440, 60);
             this.scrape.TabIndex = 4;
             this.scrape.Text = "Scrape";
             this.scrape.UseCompatibleTextRendering = true;
@@ -91,7 +92,7 @@ namespace Rexplorer.Forms {
             this.configInputText.Location = new System.Drawing.Point(170, 10);
             this.configInputText.Margin = new System.Windows.Forms.Padding(0);
             this.configInputText.Name = "configInputText";
-            this.configInputText.Size = new System.Drawing.Size(355, 30);
+            this.configInputText.Size = new System.Drawing.Size(356, 30);
             this.configInputText.TabIndex = 2;
             // 
             // configText
@@ -118,12 +119,33 @@ namespace Rexplorer.Forms {
             this.urlText.TabIndex = 9;
             this.urlText.Text = "Url: ";
             // 
+            // exportToClipboardButton
+            // 
+            this.exportToClipboardButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.exportToClipboardButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(0)))), ((int)(((byte)(40)))));
+            this.exportToClipboardButton.Enabled = false;
+            this.exportToClipboardButton.FlatAppearance.BorderSize = 0;
+            this.exportToClipboardButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(60)))));
+            this.exportToClipboardButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exportToClipboardButton.Font = new System.Drawing.Font("Verdana", 28F);
+            this.exportToClipboardButton.ForeColor = System.Drawing.Color.White;
+            this.exportToClipboardButton.Location = new System.Drawing.Point(460, 260);
+            this.exportToClipboardButton.Margin = new System.Windows.Forms.Padding(0);
+            this.exportToClipboardButton.Name = "exportToClipboardButton";
+            this.exportToClipboardButton.Size = new System.Drawing.Size(60, 60);
+            this.exportToClipboardButton.TabIndex = 5;
+            this.exportToClipboardButton.Text = "✂";
+            this.exportToClipboardButton.UseCompatibleTextRendering = true;
+            this.exportToClipboardButton.UseVisualStyleBackColor = false;
+            this.exportToClipboardButton.Click += new System.EventHandler(this.exportToClipboardButton_Click);
+            // 
             // ScraperForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.ClientSize = new System.Drawing.Size(534, 330);
+            this.ClientSize = new System.Drawing.Size(534, 331);
+            this.Controls.Add(this.exportToClipboardButton);
             this.Controls.Add(this.urlText);
             this.Controls.Add(this.configText);
             this.Controls.Add(this.confingInputFileBrowser);
@@ -145,5 +167,6 @@ namespace Rexplorer.Forms {
         private System.Windows.Forms.TextBox configInputText;
         private System.Windows.Forms.Label configText;
         private System.Windows.Forms.Label urlText;
+        private System.Windows.Forms.Button exportToClipboardButton;
     }
 }
