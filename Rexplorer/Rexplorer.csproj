@@ -94,6 +94,18 @@
     <Compile Include="Classes\ReProcess.cs" />
     <Compile Include="Classes\ReScrape.cs" />
     <Compile Include="Classes\StringBind.cs" />
+    <Compile Include="Components\FileBrowser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\FileBrowser.Designer.cs">
+      <DependentUpon>FileBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\FileItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\FileItem.Designer.cs">
+      <DependentUpon>FileItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ConvertVideoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +125,12 @@
       <DependentUpon>ScraperForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Components\FileBrowser.resx">
+      <DependentUpon>FileBrowser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\FileItem.resx">
+      <DependentUpon>FileItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ConvertVideoForm.resx">
       <DependentUpon>ConvertVideoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,9 +165,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Components\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
